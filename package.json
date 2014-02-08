@@ -1,0 +1,11 @@
+{
+  "name": "ibeacon-client",
+  "version": "0.0.1",
+  "dependencies": {
+    "bleacon": "~0.2.0",
+    "request": "~2.33.0"
+  },
+  "scripts": {
+    "preinstall": "if [ ! -e ./config.json ]; then echo '{\n  \"id\": \"\",\n  \"uuid\": \"\"\n}' > ./config.json; fi"
+  }
+}
