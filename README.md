@@ -16,3 +16,15 @@ config.jsonにidを設定。必要であれば検索対象のUUIDを指定（指
   "uuid": ""
 }
 ```
+
+起動したら近くにあるiBeaconの電波を受信してサーバーに送信する
+
+```
+$ node app.js
+```
+
+`sample.html`をブラウザで開く（`file://`でOK）とサーバー経由でデータを受信できる。
+
+```
+$ open sample.html
+```
