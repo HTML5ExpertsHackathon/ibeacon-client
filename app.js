@@ -7,7 +7,7 @@ if (!config.id) {
   process.exit(1);
 }
 
-bleacon.startScanning(config.uuid || null);
+bleacon.startScanning(config.uuid ? config.uuid.replace(/-/g, '').toLowerCase() : null);
 
 bleacon.on('discover', function(data) {
   data.id = config.id;
