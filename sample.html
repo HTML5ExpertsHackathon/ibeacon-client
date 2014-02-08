@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>iBeacon Client Example</title>
+<style>
+pre {
+  margin: 10px 0;
+  border: 1px solid #CCC;
+  background: #EFEFEF;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+<div class="log"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+var es = new EventSource('http://html5-export-hackathon-ibeacon.herokuapp.com/');
+ 
+es.onmessage = function(event) {
+  var data = JSON.parse(event.data);
+  log(data);
+};
+ 
+function log(data) {
+  $('<pre>').text(JSON.stringify(data, null, 2))
+            .hide().prependTo('.log').slideDown('fast');
+}
+</script>
+</body>
+</html>
